@@ -1,7 +1,8 @@
 """
 Couche d'accès base de données pour Jardiner Simplement.
 
-- Production (Heroku) : PostgreSQL via la variable d'environnement DATABASE_URL
+- Production (Streamlit Community Cloud) : PostgreSQL via st.secrets["DATABASE_URL"]
+- Production (autre) : PostgreSQL via la variable d'environnement DATABASE_URL
 - Développement local : SQLite (fichier jardiner.db créé automatiquement)
 """
 
@@ -12,8 +13,19 @@ from contextlib import contextmanager
 from datetime import date
 from typing import Any, Dict, List, Optional
 
-DATABASE_URL = os.environ.get("DATABASE_URL", "")
 _SQLITE_PATH = "jardiner.db"
+
+
+def _get_db_url() -> str:
+    """Récupère DATABASE_URL depuis os.environ ou st.secrets (Streamlit Cloud)."""
+    url = os.environ.get("DATABASE_URL", "")
+    if not url:
+        try:
+            import streamlit as st
+            url = st.secrets.get("DATABASE_URL", "")
+        except Exception:
+            pass
+    return url
 
 
 # ─── Sérialisation JSON ────────────────────────────────────────────────────────
@@ -47,7 +59,7 @@ def _dumps(obj: Any) -> str:
 # ─── Connexion ─────────────────────────────────────────────────────────────────
 
 def _is_pg() -> bool:
-    return bool(DATABASE_URL)
+    return bool(_get_db_url())
 
 
 def _ph() -> str:
@@ -60,8 +72,7 @@ def _conn():
     """Context manager : connexion DB avec commit ou rollback automatique."""
     if _is_pg():
         import psycopg2
-        url = DATABASE_URL
-        # Heroku génère des URLs postgres:// que psycopg2 n'accepte plus
+        url = _get_db_url()
         if url.startswith("postgres://"):
             url = url.replace("postgres://", "postgresql://", 1)
         conn = psycopg2.connect(url)
