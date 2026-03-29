@@ -81,11 +81,31 @@ def authenticate_user(username: str, password: str) -> bool:
     if not user_exists(username):
         return False
     
+    user_path = user_file_path(username)
+    backup_path = user_path.with_suffix('.json.backup')
+    
     try:
-        with open(user_file_path(username), "r", encoding="utf-8") as f:
+        with open(user_path, "r", encoding="utf-8") as f:
             user_data = json.load(f)
     except (json.JSONDecodeError, FileNotFoundError) as e:
-        st.error(f"Erreur lors du chargement du compte utilisateur : {e}")
+        # Try to restore from backup
+        if user_path.exists() and backup_path.exists():
+            try:
+                shutil.copy2(backup_path, user_path)
+                st.warning("⚠️ Fichier utilisateur corrompu restauré depuis la sauvegarde. Essayez de vous reconnecter.")
+                return False
+            except Exception:
+                pass
+        
+        # If file is corrupted and no backup, delete it
+        if user_path.exists():
+            try:
+                user_path.unlink(missing_ok=True)
+                st.error("❌ Votre fichier de compte est corrompu et ne peut être récupéré. Veuillez recréer un compte.")
+            except Exception:
+                st.error(f"❌ Erreur lors du chargement du compte : {e}")
+        else:
+            st.error(f"❌ Erreur lors du chargement du compte : {e}")
         return False
     
     return verify_password(password, user_data["password_hash"])

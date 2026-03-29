@@ -254,6 +254,12 @@ if is_authenticated():
     if user_data:
         st.session_state.favorites = user_data.get("favorites", st.session_state.favorites)
         st.session_state.mon_jardin = user_data.get("mon_jardin", st.session_state.mon_jardin)
+    else:
+        # File missing or corrupted, log out user
+        st.warning("⚠️ Votre fichier de données utilisateur est corrompu ou manquant. Vous avez été déconnecté.")
+        logout_user()
+        st.session_state.page = "login"
+        st.rerun()
 
 # ─────────────────────────────────────────────────────────────────────────────
 # NAVIGATION
