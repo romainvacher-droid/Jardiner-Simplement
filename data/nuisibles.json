@@ -1,0 +1,95 @@
+{
+  "nuisibles": [
+    {
+      "nom": "Pucerons",
+      "emoji": "🐛",
+      "description": "Petits insectes verts, noirs ou rouges qui s'agglutinent sur les jeunes pousses et les bourgeons.",
+      "degats": "Déformation des feuilles, transmission de virus, fumagine (champignon noir sur le miellat)",
+      "solutions": [
+        "Purin d'ortie dilué (20 ml/L) en pulvérisation",
+        "Savon noir (1 c.à.s. / 1L d'eau) en pulvérisation",
+        "Favoriser les coccinelles, chrysopes et syrphes",
+        "Planter de la capucine comme plante-piège",
+        "Jet d'eau fort pour les décrocher"
+      ]
+    },
+    {
+      "nom": "Limaces & Escargots",
+      "emoji": "🐌",
+      "description": "Mollusques nocturnes qui ravagent les jeunes plants, surtout par temps humide.",
+      "degats": "Feuilles trouées, plants coupés au ras du sol, semis détruits",
+      "solutions": [
+        "Cendres de bois autour des plants (barrière à renouveler)",
+        "Coquilles d'œufs broyées grossièrement",
+        "Feuilles de fougère en paillis",
+        "Granulés de métaldéhyde (avec précaution) ou de phosphate ferrique (sans danger)",
+        "Pièges à bière (soucoupes enfoncées dans le sol)",
+        "Ramassage nocturne à la lampe de poche"
+      ]
+    },
+    {
+      "nom": "Mildiou",
+      "emoji": "🍂",
+      "description": "Champignon redoutable qui touche les tomates, pommes de terre et vignes. Se développe par temps chaud et humide.",
+      "degats": "Taches brunes sur les feuilles et tiges, pourriture rapide des fruits",
+      "solutions": [
+        "Bouillie bordelaise en prévention (avant les pluies)",
+        "Éviter de mouiller les feuilles en arrosant",
+        "Supprimer les feuilles atteintes et les brûler",
+        "Bonne aération des plants (ne pas trop serrer)",
+        "Choisir des variétés résistantes",
+        "Rotation des cultures (ne pas replanter tomates/pommes de terre au même endroit)"
+      ]
+    },
+    {
+      "nom": "Doryphore",
+      "emoji": "🪲",
+      "description": "Coléoptère rayé jaune et noir, ravageur des pommes de terre et aubergines.",
+      "degats": "Feuilles entièrement dévorées, plant affaibli voire mort",
+      "solutions": [
+        "Ramassage manuel des adultes et des pontes orange (sous les feuilles)",
+        "Purin de tanaisie en pulvérisation répulsive",
+        "Huile de neem (azadirachtine) — traitement naturel efficace",
+        "Rotation des cultures stricte",
+        "Paillage épais qui perturbe l'hivernage des larves"
+      ]
+    },
+    {
+      "nom": "Oïdium",
+      "emoji": "🌫️",
+      "description": "Champignon qui forme une poudre blanche sur les feuilles. Fréquent sur courgettes, rosiers, courges.",
+      "degats": "Affaiblissement de la plante, mort des feuilles touchées",
+      "solutions": [
+        "Lait dilué (1/3 lait, 2/3 eau) en pulvérisation hebdomadaire",
+        "Bicarbonate de soude (1 c.à.c. / 1L d'eau + quelques gouttes de savon noir)",
+        "Décoction de prêle (antifongique naturel puissant)",
+        "Supprimer les feuilles très atteintes",
+        "Aérer les plants en taillant légèrement"
+      ]
+    },
+    {
+      "nom": "Mouche de la carotte",
+      "emoji": "🦟",
+      "description": "Petite mouche dont les larves creusent des galeries dans les carottes.",
+      "degats": "Carottes trouées et brunies de l'intérieur, totalement impropres à la consommation",
+      "solutions": [
+        "Filet anti-insectes dès le semis (solution la plus efficace)",
+        "Associer carottes et oignons / poireaux",
+        "Semer en juin (après le premier vol de mai)",
+        "Éviter de laisser des fanes à proximité"
+      ]
+    },
+    {
+      "nom": "Taupins (vers fil de fer)",
+      "emoji": "🐛",
+      "description": "Larves de coléoptère, jaunâtres et dures, qui vivent plusieurs années dans le sol.",
+      "degats": "Galeries dans les tubercules (pommes de terre, carottes), plants qui fanent",
+      "solutions": [
+        "Enfouir des morceaux de pomme de terre comme piège et les retirer régulièrement",
+        "Retourner la terre en automne pour exposer les larves aux oiseaux",
+        "Planter des tagètes (œillets d'Inde) dont les racines sont répulsives",
+        "Éviter les sols trop riches en matières organiques non décomposées"
+      ]
+    }
+  ]
+}

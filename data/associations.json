@@ -1,0 +1,14 @@
+{
+  "associations": [
+    {"plante1": "Tomate 🍅", "plante2": "Basilic 🌿", "effet": "✅ Le basilic repousse les pucerons et améliore le goût des tomates."},
+    {"plante1": "Carotte 🥕", "plante2": "Oignon 🧅", "effet": "✅ La carotte repousse la mouche de l'oignon, l'oignon repousse la mouche de la carotte."},
+    {"plante1": "Chou 🥬", "plante2": "Tomate 🍅", "effet": "❌ La tomate inhibe la croissance des choux."},
+    {"plante1": "Haricot 🫘", "plante2": "Maïs 🌽", "effet": "✅ Le haricot fixe l'azote qui nourrit le maïs."},
+    {"plante1": "Courgette 🥒", "plante2": "Capucine 🌸", "effet": "✅ La capucine attire les pucerons loin des courgettes."},
+    {"plante1": "Pomme de terre 🥔", "plante2": "Tomate 🍅", "effet": "❌ Même famille (solanacées) — partagent les mêmes maladies (mildiou)."},
+    {"plante1": "Fraise 🍓", "plante2": "Ail 🧄", "effet": "✅ L'ail protège les fraisiers contre les maladies fongiques."},
+    {"plante1": "Fenouil 🌿", "plante2": "Tout le monde", "effet": "❌ Le fenouil inhibe presque toutes les autres cultures — isolez-le."},
+    {"plante1": "Laitue 🥬", "plante2": "Radis 🌱", "effet": "✅ Le radis ameublit le sol au profit de la laitue."},
+    {"plante1": "Rosier 🌹", "plante2": "Ail 🧄", "effet": "✅ L'ail planté au pied des rosiers prévient la maladie des taches noires."}
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "traitements_naturels": [
+    {
+      "nom": "Purin d'ortie",
+      "emoji": "🌿",
+      "usage": "Engrais foliaire, stimulant, répulsif pucerons",
+      "recette": "1 kg d'orties fraîches dans 10 L d'eau. Laisser fermenter 10–15 jours à l'ombre en remuant. Filtrer. Diluer à 10% pour engrais, 5% en répulsif.",
+      "application": "Pulvérisation sur feuilles ou arrosage au pied"
+    },
+    {
+      "nom": "Purin de prêle",
+      "emoji": "🌾",
+      "usage": "Antifongique, fortifiant, contre mildiou et oïdium",
+      "recette": "100g de prêle sèche dans 1L d'eau. Faire bouillir 20 min. Filtrer. Diluer à 20%.",
+      "application": "Pulvérisation préventive tous les 15 jours"
+    },
+    {
+      "nom": "Bouillie bordelaise",
+      "emoji": "🔵",
+      "usage": "Fongicide contre mildiou, tavelure, cloque du pêcher",
+      "recette": "Disponible prête à l'emploi. Ou : 100g de sulfate de cuivre + 100g de chaux vive dans 10L d'eau.",
+      "application": "Pulvérisation préventive avant les pluies, max 3 fois/an"
+    },
+    {
+      "nom": "Savon noir",
+      "emoji": "🧼",
+      "usage": "Insecticide doux contre pucerons, acariens, cochenilles",
+      "recette": "1 cuillère à soupe de savon noir liquide dans 1 litre d'eau tiède. Mélanger.",
+      "application": "Pulvérisation directe sur les colonies, le matin. Rincer 48h après."
+    },
+    {
+      "nom": "Bicarbonate de soude",
+      "emoji": "🧂",
+      "usage": "Antifongique léger contre oïdium",
+      "recette": "1 cuillère à café de bicarbonate + 1 litre d'eau + quelques gouttes de savon noir.",
+      "application": "Pulvérisation hebdomadaire sur les feuilles atteintes"
+    },
+    {
+      "nom": "Cendres de bois",
+      "emoji": "⚪",
+      "usage": "Barrière anti-limaces, apport de potasse",
+      "recette": "Cendres de bois non traitées refroidies. Saupoudrer autour des plants.",
+      "application": "Cercle autour des plants à renouveler après la pluie"
+    }
+  ]
+}

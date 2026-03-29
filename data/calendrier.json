@@ -1,0 +1,100 @@
+{
+  "calendrier": {
+    "1": {
+      "nom": "Janvier",
+      "semis": ["Laitues (sous abri)", "Tomates (très tôt, sous serre chaude)", "Poivrons (sous serre)"],
+      "planter": ["Arbres fruitiers à racines nues (si sol non gelé)", "Ail", "Échalotes"],
+      "recolter": ["Choux de Bruxelles", "Poireaux", "Mâche", "Épinards d'hiver", "Kale"],
+      "travaux": ["Tailler les arbres fruitiers (pommiers, poiriers)", "Préparer le compost", "Commander les semences", "Nettoyer et ranger les outils"],
+      "conseil": "Le jardin se repose. Profitez-en pour planifier la saison et commander vos semences."
+    },
+    "2": {
+      "nom": "Février",
+      "semis": ["Tomates (sous serre chaude)", "Poivrons", "Aubergines", "Salades (sous abri)", "Poireaux", "Oignons"],
+      "planter": ["Ail", "Échalotes", "Pommes de terre primeurs (sous abri)", "Framboisiers"],
+      "recolter": ["Mâche", "Épinards", "Poireaux", "Choux", "Bettes"],
+      "travaux": ["Tailler les rosiers et petits fruits", "Préparer les bacs à semis", "Désherber à la houe par temps sec", "Pailler les fraisiers"],
+      "conseil": "Les jours rallongent. Il est temps de préparer vos semis sous abri."
+    },
+    "3": {
+      "nom": "Mars",
+      "semis": ["Tomates", "Courgettes (sous abri)", "Concombres (sous abri)", "Haricots (sous abri)", "Betteraves", "Radis", "Épinards", "Carottes (en place)"],
+      "planter": ["Oignons", "Échalotes", "Pommes de terre (tôt)", "Petits pois", "Fraisiers"],
+      "recolter": ["Épinards", "Mâche", "Oseille", "Rhubarbe (premières tiges)"],
+      "travaux": ["Bêcher légèrement les massifs", "Nettoyer les allées", "Installer les tuteurs", "Préparer les buttes pour les courges"],
+      "conseil": "La saison démarre ! Semez à l'abri et durcissez progressivement vos plants."
+    },
+    "4": {
+      "nom": "Avril",
+      "semis": ["Courgettes", "Courges", "Haricots verts", "Maïs (sous abri)", "Basilic", "Tournesols", "Laitues", "Betteraves"],
+      "planter": ["Pommes de terre", "Petits pois", "Oignons", "Poireaux (repiquage)", "Choux (plants)"],
+      "recolter": ["Radis", "Oseille", "Asperges", "Épinards", "Rhubarbe", "Laitues d'hiver"],
+      "travaux": ["Repiquer les tomates si temps doux (après Saints de Glace = avant mi-mai)", "Semer les engrais verts", "Pailler généreusement", "Installer le système d'arrosage"],
+      "conseil": "Attention aux gelées tardives ! Protégez vos plants sensibles jusqu'aux Saints de Glace."
+    },
+    "5": {
+      "nom": "Mai",
+      "semis": ["Haricots en place", "Courges en place", "Basilic en place", "Cornichons", "Navets"],
+      "planter": ["Tomates (après le 15)", "Poivrons", "Aubergines", "Courgettes (plants)", "Melons (sous abri)"],
+      "recolter": ["Asperges", "Radis", "Salades", "Petits pois (premiers)", "Fraises", "Rhubarbe"],
+      "travaux": ["Pincer les gourmands des tomates", "Buter les pommes de terre", "Désherber régulièrement", "Installer les filets anti-insectes"],
+      "conseil": "Après les Saints de Glace (11, 12, 13 mai), plus de risque de gel — plantez tout !"
+    },
+    "6": {
+      "nom": "Juin",
+      "semis": ["Haricots (2e semis)", "Carottes (2e semis)", "Laitues (résistantes chaleur)", "Fenouil", "Betteraves (2e semis)"],
+      "planter": ["Poireaux d'automne", "Céleris-raves", "Brocolis d'automne"],
+      "recolter": ["Fraises", "Petits pois", "Radis", "Salades", "Courgettes (premières)", "Cerises", "Ail nouveau"],
+      "travaux": ["Arroser tôt le matin ou le soir", "Pailler pour retenir l'humidité", "Attacher les tomates", "Traiter préventivement contre le mildiou"],
+      "conseil": "La chaleur arrive. Le paillage devient indispensable pour économiser l'eau."
+    },
+    "7": {
+      "nom": "Juillet",
+      "semis": ["Navets", "Épinards (pour automne)", "Mâche", "Radis d'automne", "Laitues d'automne"],
+      "planter": ["Choux d'automne et d'hiver", "Poireaux d'automne", "Céleri"],
+      "recolter": ["Courgettes", "Haricots verts", "Tomates (premières)", "Concombres", "Pommes de terre nouvelles", "Oignons", "Framboises", "Myrtilles"],
+      "travaux": ["Arroser régulièrement", "Récolter souvent pour stimuler la production", "Tailler les stolons des fraisiers", "Ébourgeonnage des tomates"],
+      "conseil": "Récoltez souvent ! Un légume oublié arrête la production de la plante."
+    },
+    "8": {
+      "nom": "Août",
+      "semis": ["Mâche", "Épinards", "Radis", "Navets", "Laitues résistantes", "Carottes (pour hiver)"],
+      "planter": ["Choux de Bruxelles", "Brocolis tardifs", "Fraisiers (nouvelle plantation)"],
+      "recolter": ["Tomates", "Poivrons", "Aubergines", "Courgettes", "Haricots verts", "Maïs", "Melons", "Prunes", "Pommes tôt"],
+      "travaux": ["Préparer les planches pour les semis d'automne", "Faire les conserves", "Bouturer les géraniums", "Tailler les haies (dernière fois)"],
+      "conseil": "C'est la pleine abondance ! Préparez déjà vos semis d'automne en fin de mois."
+    },
+    "9": {
+      "nom": "Septembre",
+      "semis": ["Épinards", "Mâche", "Ail (plantation)", "Laitues d'hiver", "Bleuets et fleurs bisannuelles"],
+      "planter": ["Ail d'automne", "Oignons blancs", "Fraisiers", "Bulbes de printemps (jacinthes, tulipes)"],
+      "recolter": ["Tomates (avant premières gelées)", "Courges et citrouilles", "Pommes de terre", "Oignons", "Pommes", "Poires", "Raisins"],
+      "travaux": ["Stocker les courges", "Ramasser les noix et noisettes", "Semer un engrais vert", "Préparer le potager pour l'hiver"],
+      "conseil": "Récoltez les courges avant les gelées — elles se conservent 6 mois à l'abri."
+    },
+    "10": {
+      "nom": "Octobre",
+      "semis": ["Épinards résistants", "Blé ou phacélie (engrais vert)", "Pois (sous abri)"],
+      "planter": ["Ail", "Tulipes", "Narcisses", "Jacinthes", "Arbres et arbustes"],
+      "recolter": ["Dernières tomates", "Poireaux", "Poireaux", "Choux", "Betteraves", "Carottes", "Céleri", "Pommes tardives"],
+      "travaux": ["Ramasser les feuilles mortes (compost ou paillis)", "Butter les poireaux", "Rentrer les plantes frileuses", "Tailler les touffes vivaces"],
+      "conseil": "Plantez les bulbes maintenant pour de belles fleurs au printemps."
+    },
+    "11": {
+      "nom": "Novembre",
+      "semis": ["Pois (sous abri froid)", "Fèves (sous abri)"],
+      "planter": ["Ail tardif", "Arbres fruitiers à racines nues (si sol non gelé)", "Haies"],
+      "recolter": ["Poireaux", "Mâche", "Choux de Bruxelles", "Choux kale", "Topinambours", "Courges (conservation)"],
+      "travaux": ["Rentrer les dernières plantes", "Protéger les cultures fragiles avec un voile", "Nettoyer le potager", "Pailler les vivaces"],
+      "conseil": "Protégez la terre avec un paillis — un sol nu en hiver se dégrade et se perd."
+    },
+    "12": {
+      "nom": "Décembre",
+      "semis": [],
+      "planter": ["Arbres à racines nues par temps doux"],
+      "recolter": ["Choux de Bruxelles", "Poireaux", "Mâche", "Épinards d'hiver", "Topinambours"],
+      "travaux": ["Tailler les arbres fruitiers", "Commander les semences", "Entretenir les outils", "Planifier la rotation des cultures"],
+      "conseil": "Profitez du calme du jardin pour planifier et rêver à la prochaine saison."
+    }
+  }
+}
