@@ -19,6 +19,7 @@ from pages.favoris import render_favoris
 from pages.mon_jardin import render_mon_jardin
 from pages.outils import render_outils
 from pages.login import render_login
+from utils.database import init_db
 from utils.auth import (
     is_authenticated,
     get_current_user,
@@ -27,12 +28,13 @@ from utils.auth import (
     update_user_favorites,
     update_user_garden,
     load_user_data,
-    _parse_garden_dates,
 )
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIGURATION
 # ─────────────────────────────────────────────────────────────────────────────
+
+init_db()
 
 st.set_page_config(
     page_title="Jardiner Simplement",
@@ -253,7 +255,6 @@ if is_authenticated():
     user_data = load_user_data(st.session_state.current_user)
     if user_data:
         st.session_state.favorites = user_data.get("favorites", st.session_state.favorites)
-        # load_user_data already converts ISO strings to date objects
         st.session_state.mon_jardin = user_data.get("mon_jardin", st.session_state.mon_jardin)
     else:
         # File missing or corrupted, log out user
