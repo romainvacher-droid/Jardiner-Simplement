@@ -5,6 +5,7 @@ Simple file-based user management with password hashing.
 
 import json
 import hashlib
+import shutil
 import streamlit as st
 from pathlib import Path
 from typing import Optional, Dict, Any
@@ -95,11 +96,38 @@ def load_user_data(username: str) -> Optional[Dict[str, Any]]:
     if not user_exists(username):
         return None
     
+    user_path = user_file_path(username)
+    backup_path = user_path.with_suffix('.json.backup')
+    
     try:
-        with open(user_file_path(username), "r", encoding="utf-8") as f:
+        with open(user_path, "r", encoding="utf-8") as f:
             return json.load(f)
     except (json.JSONDecodeError, FileNotFoundError) as e:
-        st.error(f"Erreur lors du chargement des données utilisateur : {e}")
+        # If file is corrupted and we have a backup, restore it
+        if user_path.exists() and backup_path.exists():
+            try:
+                shutil.copy2(backup_path, user_path)
+                st.warning("⚠️ Fichier utilisateur corrompu restauré depuis la sauvegarde.")
+                with open(user_path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+        
+        # If still failing or no backup, create fresh user data if file exists and is corrupted
+        if user_path.exists():
+            st.error(f"❌ Fichier de données corrompu. Un nouveau fichier a été créé.")
+            fresh_data = {
+                "username": username,
+                "password_hash": "",
+                "favorites": {"legumes": [], "associations": [], "nuisibles": []},
+                "mon_jardin": []
+            }
+            try:
+                with open(user_path, "w", encoding="utf-8") as f:
+                    json.dump(fresh_data, f, indent=2, ensure_ascii=False)
+                return fresh_data
+            except Exception:
+                return None
         return None
 
 
