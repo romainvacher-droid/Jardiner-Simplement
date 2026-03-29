@@ -104,16 +104,14 @@ def render_mon_jardin():
             legume_data = legumes[legume_nom]
             date_plant = plant["date_plantation"]
             
-            # Estimate harvest time (simplified)
-            # This is a rough estimate - in reality it varies by vegetable
+            # Estimate harvest time (simplified rough estimate)
             mois_plantation = date_plant.month
-            # Rough estimate: harvest 2-6 months after planting depending on vegetable
             if "primeurs" in legume_data["recolte"].lower() or "nouvelles" in legume_data["recolte"].lower():
-                mois_recolte = (mois_plantation + 2) % 12
+                mois_recolte = ((mois_plantation - 1 + 2) % 12) + 1
             elif "juillet" in legume_data["recolte"].lower() or "août" in legume_data["recolte"].lower():
-                mois_recolte = (mois_plantation + 3) % 12
+                mois_recolte = ((mois_plantation - 1 + 3) % 12) + 1
             else:
-                mois_recolte = (mois_plantation + 4) % 12
+                mois_recolte = ((mois_plantation - 1 + 4) % 12) + 1
             
             with st.container():
                 col1, col2, col3, col4 = st.columns([1, 2, 2, 1])

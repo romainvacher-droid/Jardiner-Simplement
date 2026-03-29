@@ -26,7 +26,8 @@ from utils.auth import (
     logout_user,
     update_user_favorites,
     update_user_garden,
-    load_user_data
+    load_user_data,
+    _parse_garden_dates,
 )
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -219,7 +220,6 @@ st.markdown("""
     ::-webkit-scrollbar-thumb:hover {
         background: #3d6b3d;
     }
-}
 """, unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -253,6 +253,7 @@ if is_authenticated():
     user_data = load_user_data(st.session_state.current_user)
     if user_data:
         st.session_state.favorites = user_data.get("favorites", st.session_state.favorites)
+        # load_user_data already converts ISO strings to date objects
         st.session_state.mon_jardin = user_data.get("mon_jardin", st.session_state.mon_jardin)
     else:
         # File missing or corrupted, log out user

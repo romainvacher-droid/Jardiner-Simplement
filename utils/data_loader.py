@@ -8,52 +8,53 @@ from pathlib import Path
 from typing import Dict, Any, List
 
 
+def _load_json(path: str) -> Any:
+    """Load and return a JSON file, raising a clear error on failure."""
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        st.error(f"❌ Fichier de données manquant : {path}")
+        raise
+    except json.JSONDecodeError as e:
+        st.error(f"❌ Fichier de données corrompu ({path}) : {e}")
+        raise
+
+
 @st.cache_data
 def load_conseils() -> List[str]:
     """Load daily gardening tips."""
-    with open("data/conseils.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data["conseils_du_jour"]
+    return _load_json("data/conseils.json")["conseils_du_jour"]
 
 
 @st.cache_data
 def load_calendrier() -> Dict[str, Any]:
     """Load the 12-month gardening calendar."""
-    with open("data/calendrier.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data["calendrier"]
+    return _load_json("data/calendrier.json")["calendrier"]
 
 
 @st.cache_data
 def load_legumes() -> Dict[str, Any]:
     """Load vegetable guide data."""
-    with open("data/legumes.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data["legumes"]
+    return _load_json("data/legumes.json")["legumes"]
 
 
 @st.cache_data
 def load_associations() -> List[Dict[str, str]]:
     """Load companion planting associations."""
-    with open("data/associations.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data["associations"]
+    return _load_json("data/associations.json")["associations"]
 
 
 @st.cache_data
 def load_nuisibles() -> List[Dict[str, Any]]:
     """Load pests and diseases data."""
-    with open("data/nuisibles.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data["nuisibles"]
+    return _load_json("data/nuisibles.json")["nuisibles"]
 
 
 @st.cache_data
 def load_traitements() -> List[Dict[str, str]]:
     """Load natural treatment recipes."""
-    with open("data/traitements.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data["traitements_naturels"]
+    return _load_json("data/traitements.json")["traitements_naturels"]
 
 
 def get_conseil_du_jour() -> str:
@@ -76,7 +77,7 @@ def search_legumes(keyword: str) -> List[tuple]:
     legumes = load_legumes()
     results = []
     keyword_lower = keyword.lower()
-    
+
     for nom, data in legumes.items():
         score = 0
         if keyword_lower in nom.lower():
@@ -91,11 +92,10 @@ def search_legumes(keyword: str) -> List[tuple]:
             score += 3
         if keyword_lower in data["maladies"].lower():
             score += 2
-        
+
         if score > 0:
             results.append((nom, data, score))
-    
-    # Sort by relevance score
+
     results.sort(key=lambda x: x[2], reverse=True)
     return results
 
@@ -105,7 +105,7 @@ def search_associations(keyword: str) -> List[tuple]:
     associations = load_associations()
     keyword_lower = keyword.lower()
     results = []
-    
+
     for assoc in associations:
         score = 0
         if keyword_lower in assoc["plante1"].lower():
@@ -114,10 +114,10 @@ def search_associations(keyword: str) -> List[tuple]:
             score += 5
         if keyword_lower in assoc["effet"].lower():
             score += 2
-        
+
         if score > 0:
             results.append((assoc, score))
-    
+
     results.sort(key=lambda x: x[1], reverse=True)
     return [r[0] for r in results]
 
@@ -127,7 +127,7 @@ def search_nuisibles(keyword: str) -> List[tuple]:
     nuisibles = load_nuisibles()
     keyword_lower = keyword.lower()
     results = []
-    
+
     for nuisible in nuisibles:
         score = 0
         if keyword_lower in nuisible["nom"].lower():
@@ -139,10 +139,10 @@ def search_nuisibles(keyword: str) -> List[tuple]:
         for solution in nuisible["solutions"]:
             if keyword_lower in solution.lower():
                 score += 1
-        
+
         if score > 0:
             results.append((nuisible, score))
-    
+
     results.sort(key=lambda x: x[1], reverse=True)
     return [r[0] for r in results]
 
