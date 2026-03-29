@@ -1,0 +1,24 @@
+# Streamlit Configuration
+
+[theme]
+primaryColor = "#4caf50"
+backgroundColor = "#0d1f0d"
+secondaryBackgroundColor = "#1a3a1a"
+textColor = "#ffffff"
+font = "sans serif"
+
+[client]
+showErrorDetails = false
+toolbarMode = "minimal"
+
+[server]
+port = 8501
+headless = true
+runOnSave = true
+
+[logger]
+level = "warning"
+
+[browser]
+gatherUsageStats = false
+serverAddress = "localhost"
