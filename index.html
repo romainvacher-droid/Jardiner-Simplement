@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardinage - Votre jardin, c'est notre passion</title>
+    <style>
+        /* Reset et variables CSS */
+        :root {
+            --primary-green: #2d5016;
+            --secondary-green: #4a7c23;
+            --accent-green: #8bc34a;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --light-text: #666;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: var(--white);
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Container générique */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Avantages */
+        .avantages {
+            padding: 80px 20px;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--primary-green);
+            margin-bottom: 50px;
+        }
+
+        .avantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .avantage-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .avantage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .avantage-card h3 {
+            color: var(--secondary-green);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .avantage-card p {
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+
+        /* Section Témoignages */
+        .temoinages {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .temoins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .temoignage-card {
+            background: var(--light-bg);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            border-left: 5px solid var(--accent-green);
+            box-shadow: var(--shadow);
+        }
+
+        .temoignage-text {
+            font-style: italic;
+            color: var(--dark-text);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .temoignage-author {
+            font-weight: 600;
+            color: var(--secondary-green);
+            font-size: 1rem;
+        }
+
+        .temoignage-age {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        .footer h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 30px;
+        }
+
+        .footer p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            font-size: 1.5rem;
+            margin: 30px 0;
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            background: var(--white);
+            color: var(--primary-green);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .social-btn:hover {
+            background: var(--accent-green);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 15px;
+                min-height: 60vh;
+            }
+
+            .avantages, .temoinages {
+                padding: 50px 15px;
+            }
+
+            .footer {
+                padding: 40px 15px 20px;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        /* Animations légères */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .avantage-card, .temoignage-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Amélioration typographie */
+        .temoignage-text::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent-green);
+            line-height: 0;
+            vertical-align: -10px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Votre jardin, c'est notre passion.</h1>
+            <p>Transformez votre espace extérieur en un havre de paix et de beauté naturelle.</p>
+        </div>
+    </section>
+
+    <!-- Section Avantages -->
+    <section class="avantages">
+        <div class="container">
+            <h2 class="section-title">Pourquoi nous choisir ?</h2>
+            <div class="avantages-grid">
+                <div class="avantage-card">
+                    <h3>🌿 100% naturel</h3>
+                    <p>Des produits respectueux de l'environnement pour un jardin sain et durable. Cultivez en harmonie avec la nature.</p>
+                </div>
+                <div class="avantage-card">
+                    <h3>💧 Économie d'eau</h3>
+                    <p>Réduisez votre consommation d'eau de 40% grâce à nos systèmes d'irrigation intelligents. Économisez tout en préservant la planète.</p>
+                </div>
+                <div class="avantage-card">
+                    <h3>🌺 Plus de fleurs</h3>
+                    <p>Des conseils d'experts pour des floraisons spectaculaires toute l'année. Votre jardin sera le plus beau du quartier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section class="temoinages">
+        <div class="container">
+            <h2 class="section-title">Ce que nos clients disent</h2>
+            <div class="temoins-grid">
+                <div class="temoignage-card">
+                    <p class="temoignage-text">Grâce à leurs conseils, mon jardin est devenu un véritable paradis. Les fleurs sont magnifiques et mes légumes poussent comme jamais !</p>
+                    <p class="temoignage-author">Marie<span class="temoignage-age">, 58 ans, retraitée passionnée</span></p>
+                </div>
+                <div class="temoignage-card">
+                    <p class="temoignage-text">J'ai réduit ma consommation d'eau de moitié tout en gardant un jardin luxuriant. Leur système d'irrigation est révolutionnaire !</p>
+                    <p class="temoignage-author">Jean<span class="temoignage-age">, 42 ans, éco-responsable</span></p>
+                </div>
+                <div class="temoignage-card">
+                    <p class="temoignage-text">Je ne pensais pas pouvoir avoir un jardin aussi beau sans produits chimiques. Leurs solutions naturelles sont efficaces et respectueuses de l'environnement.</p>
+                    <p class="temoignage-author">Sophie<span class="temoignage-age">, 35 ans, jeune maman</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h2>Prêt à transformer votre jardin ?</h2>
+            <p>Contactez-nous dès aujourd'hui pour un devis gratuit. Suivez-nous sur Instagram et Facebook pour plus de conseils et d'inspiration jardinage.</p>
+            <p class="contact-info">📞 +33 1 23 45 67 89</p>
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank" class="social-btn">📷 Instagram</a>
+                <a href="https://facebook.com" target="_blank" class="social-btn">📘 Facebook</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
